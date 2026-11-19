@@ -71,4 +71,45 @@ public class Fraction {
 			System.out.println("Denominator cannot be 0");
 		}
 	} 
+	
+	// static methods
+	public static Fraction add(Fraction a, Fraction b) {
+		Fraction f = new Fraction();
+		f.numerator = a.numerator * b.denominator + b.numerator * a.denominator;
+		f.denominator = a.denominator * b.denominator;
+		return f;
+	}
+	
+	public static Fraction subtract(Fraction a, Fraction b) {
+		Fraction f = new Fraction();
+		f.numerator = a.numerator * b.denominator - b.numerator * a.denominator;
+		f.denominator = a.denominator * b.denominator;
+		return f;
+	}
+	
+	public static Fraction mult (Fraction a, Fraction b) {
+		Fraction f = new Fraction();
+		f.numerator = a.numerator * b.numerator;
+		f.denominator = a.denominator * b.denominator;
+		return f;
+	}
+	
+	public static Fraction divide(Fraction a, Fraction b) {
+		Fraction f = new Fraction();
+		f.numerator = a.numerator * b.denominator;
+		f.denominator = a.denominator * b.numerator;
+		return f;
+	}
+	
+	// helper methods
+	public int GCF(int n, int d);
+	while (n != d) {
+		if (n > d) {
+			n = n - d;
+		} else {
+			d = d - n;
+		}
+	}
+	
+	return n;
 }
