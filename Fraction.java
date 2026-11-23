@@ -42,6 +42,8 @@ public class Fraction {
 	}
 	
 	// behaviour methods
+	
+	// accessor methods
 	public int getNum() {
 		return numerator;
 	}
@@ -71,6 +73,12 @@ public class Fraction {
 			System.out.println("Denominator cannot be 0");
 		}
 	} 
+	
+	public void reduce() {
+		int GCF = GCF(numerator, denominator);
+		numerator = numerator / GCF;
+		denominator = denominator / GCF; 
+	}
 	
 	// static methods
 	public static Fraction add(Fraction a, Fraction b) {
@@ -102,14 +110,14 @@ public class Fraction {
 	}
 	
 	// helper methods
-	public int GCF(int n, int d);
-	while (n != d) {
-		if (n > d) {
-			n = n - d;
-		} else {
-			d = d - n;
+	private int GCF(int n, int d) {
+		while (n != d) {
+			if (n > d) {
+				n = n - d;
+			} else {
+				d = d - n;
+			}
 		}
+		return n;
 	}
-	
-	return n;
 }
