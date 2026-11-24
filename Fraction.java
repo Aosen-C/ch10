@@ -5,8 +5,8 @@ public class Fraction {
 	
 	// constructor
 	public Fraction() { // default
-		numerator = 1;
-		denominator = 1;
+		numerator = (int) (Math.random() * 10);
+		denominator = (int) (Math.random() * 9 + 1);
 	}
 	
 	public Fraction(int n, int d) { // parameterized constructor
@@ -95,7 +95,7 @@ public class Fraction {
 		return f;
 	}
 	
-	public static Fraction mult (Fraction a, Fraction b) {
+	public static Fraction mult(Fraction a, Fraction b) {
 		Fraction f = new Fraction();
 		f.numerator = a.numerator * b.numerator;
 		f.denominator = a.denominator * b.denominator;
