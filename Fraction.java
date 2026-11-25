@@ -5,7 +5,7 @@ public class Fraction {
 	
 	// constructor
 	public Fraction() { // default
-		numerator = (int) (Math.random() * 10);
+		numerator = (int) (Math.random() * 9 + 1);
 		denominator = (int) (Math.random() * 9 + 1);
 	}
 	
@@ -38,7 +38,7 @@ public class Fraction {
 	
 	public Fraction(Fraction f) {
 		numerator = f.numerator;
-		denominator = f.numerator;
+		denominator = f.denominator;
 	}
 	
 	// behaviour methods
