@@ -60,6 +60,14 @@ public class Fraction {
 		return (double) numerator / (double) denominator;
 	}
 	
+	public boolean equals(Fraction f) {
+		f.reduce();
+		if (numerator == f.numerator && denominator == f.denominator) {
+			return true;
+		}
+		return false;
+	}
+	
 	// mutator methods
 	public void setNum(int n) {
 		numerator = n;
@@ -111,6 +119,13 @@ public class Fraction {
 	
 	// helper methods
 	private int GCF(int n, int d) {
+		if (n == 0) {
+			return 1;
+		}
+		
+		n = Math.abs(n);
+		d = Math.abs(d);
+		
 		while (n != d) {
 			if (n > d) {
 				n = n - d;

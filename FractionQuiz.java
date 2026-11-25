@@ -1,14 +1,6 @@
 import java.util.Scanner;
 
-public class FractionQuiz {
-	public static boolean equals(Fraction f, Fraction f3) {
-		f3.reduce();
-		if (f.getNum() == f3.getNum() && f.getDenom() == f3.getDenom()) {
-			return true;
-		}
-		return false;
-	}
-	
+public class FractionQuiz {	
 	public static void main(String[] args) {
 		Scanner in = new Scanner(System.in);
 		
@@ -45,13 +37,13 @@ public class FractionQuiz {
 			input = in.nextLine();
 			if (!input.equals("quit")) {
 				Fraction f = new Fraction(input);
-				if (equals(f, f3)) {
+				if (f.equals(f3)) {
 					System.out.println("Correct!");
 					numCorrect += 1;
 					numRuns += 1;
 				} else {
 					numRuns += 1;
-					System.out.printf("Wrong, the answer was %s", f3);
+					System.out.printf("Wrong, the answer was %s\n", f3);
 				}
 			}
 			System.out.println();
@@ -61,5 +53,3 @@ public class FractionQuiz {
 		System.out.printf("You answered %d/%d correctly, for a score of %.0f percent!", numCorrect, numRuns, ratio);
 	}
 }
-
-		
